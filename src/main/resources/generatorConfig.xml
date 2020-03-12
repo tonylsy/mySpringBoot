@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="mysql" targetRuntime="MyBatis3">
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/classicmodels?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=GMT%2b8&amp;autoReconnect=true"
+                        userId="root"
+                        password="123456"/>
+
+        <!-- model run like a bean-->
+        <javaModelGenerator targetPackage="com.mybatis.bean" targetProject="src/main/java"/>
+
+        <!-- the location of xml-->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
+
+        <!-- the location of dao -->
+        <javaClientGenerator type="XMLMapper" targetPackage="com.mybatis.dao" targetProject="src/main/java"/>
+        <!-- table need to create mybatis doc -->
+        <table tableName="customers"/>
+        <table tableName="offices"/>
+    </context>
+</generatorConfiguration>
