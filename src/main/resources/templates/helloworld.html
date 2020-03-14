@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>test thymeleaf</title>
+    <script src="../static/js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/hello.css">
+</head>
+<body>
+<h> here get the attribute from controller</h>
+<p th:text="${hello}"></p>
+
+<h> here test the js on spring</h>
+<p>click this <text id="word">button</text> and get the word below!</p>
+<button onclick="getWord()">get words</button>
+<p id="result"></p>
+<p id="data"></p>
+<script type="text/javascript">
+    function getWord(){
+        $.ajax({
+            url:"/getword",
+            data:{id:"getword"},
+            dataType:"json",
+            success:function(data){
+                if(data.status){
+                    console.log(data);
+                    $("#result").text(data.message);
+                    $("#data").text(data.data);
+                }
+            },
+            error:function(data){
+                alert("fail!");
+                $("#result").text(data.message);
+            }
+        })
+    }
+
+
+</script>
+</body>
+</html>
