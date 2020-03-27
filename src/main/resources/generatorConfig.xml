@@ -19,7 +19,8 @@
         <!-- the location of dao -->
         <javaClientGenerator type="XMLMapper" targetPackage="com.mybatis.dao" targetProject="src/main/java"/>
         <!-- table need to create mybatis doc -->
-        <table tableName="customers"/>
-        <table tableName="offices"/>
+        <!--<table tableName="customers"/>
+        <table tableName="offices"/>-->
+        <table tableName="employees"/>
     </context>
 </generatorConfiguration>

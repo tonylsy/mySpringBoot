@@ -31,13 +31,16 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <Root level="ERROR">
+        <Root level="TRACE">
             <AppenderRef ref="console" level="TRACE"/>
             <AppenderRef ref="detailLog" level="TRACE"/>
             <AppenderRef ref="errorLog" level="ERROR"/>
         </Root>
-        <logger name="com.mybatisMe" level="ERROR"/>
+       <!-- <logger name="com.mybatisMe" level="ERROR"/>
         <logger name="com.mybatisMe.Dao" level="DEBUG">
+            <AppenderRef ref="console"/>
+        </logger>-->
+        <logger name="com.mybatisMe.dao.LazyLoadMapper" level="TRACE">
             <AppenderRef ref="console"/>
         </logger>
     </Loggers>

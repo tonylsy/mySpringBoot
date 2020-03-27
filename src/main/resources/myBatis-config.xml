@@ -5,6 +5,7 @@
 <configuration>
     <properties resource="database.properties"/>
     <settings>
+        <setting name="lazyLoadingEnabled" value="false"/>
         <setting name="logImpl" value="LOG4J2"/>
     </settings>
     <!-- java bean -->
@@ -26,5 +27,7 @@
     <!-- xml -->
     <mappers>
         <mapper resource="mapper/CustomersMapper.xml"/>
+        <mapper resource="mapper/LazyLoadMapper.xml"/>
+        <mapper resource="mapper/OfficeLazyLoadMapper.xml"/>
     </mappers>
 </configuration>

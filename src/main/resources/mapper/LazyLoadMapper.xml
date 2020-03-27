@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.LazyLoadMapper">
+    <resultMap id="employeeLazyLoad" type="com.mybatis.bean.EmployeesLazyLoad">
+        <association  property="offices"  column="officeCode" select="com.mybatis.dao.OfficeLazyLoadMapper.getOfficesById" fetchType="lazy"/>
+    </resultMap>
+    <resultMap id="employeeNoLazyLoad" type="com.mybatis.bean.EmployeesLazyLoad">
+        <association  property="offices"  column="officeCode"
+                    select="com.mybatis.dao.OfficeLazyLoadMapper.getOfficesById"/>
+    </resultMap>
+    <select id="getEmployeeById" resultMap="employeeLazyLoad">
+        select * from employees where employeenumber = #{id}
+    </select>
+    <select id="getEmployeeByIdNoLazy" resultMap="employeeNoLazyLoad">
+        select * from employees where employeenumber = #{id}
+    </select>
+</mapper>
