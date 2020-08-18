@@ -28,7 +28,11 @@ public class GreetingController {
     @RequestMapping("/customer")
     @ResponseBody
     public Customers getCustomer(@Param("id") Integer id) {
-        return customersService.getCustomersByCustomerNum(id);
+        if (id == null) {
+            return customersService.getCustomersByCustomerNum(303);
+        }else{
+            return customersService.getCustomersByCustomerNum(id);
+        }
     }
 
     @RequestMapping("/hello")

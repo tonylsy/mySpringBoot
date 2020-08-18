@@ -11,5 +11,5 @@ to learn how to use the spring boot
 + http://localhost:8080/hello
     > 1. it shows "I run a thymeleaf!" by using thymeleaf in a html page
     > 2. clicking button and getting "here the data by jquery, and get the param: getword" by ajax in jquery.
-+ http://localhost:8080/customer
++ http://localhost:8080/customer?id=303
     > it shows customer's data from database (Specifically, CustomersNumber is 303).
