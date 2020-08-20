@@ -17,7 +17,7 @@
     <properties>
         <java.version>13</java.version>
         <encoding>utf-8</encoding>
-        <log.version>2.13.1</log.version>
+        <log.version>2.13.3</log.version>
         <jackson.version>2.10.3</jackson.version>
     </properties>
     <profiles>
